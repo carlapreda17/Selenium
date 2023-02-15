@@ -1,3 +1,5 @@
-WARNING:root:waring message
-INFO:root:info message
-ERROR:root:error_message
+02/15/2023 03:28:45 PM - LoggerDemoConf - DEBUG - debug message
+02/15/2023 03:28:45 PM - LoggerDemoConf - INFO - info message
+02/15/2023 03:28:45 PM - LoggerDemoConf - WARNING - warn message
+02/15/2023 03:28:45 PM - LoggerDemoConf - ERROR - error message
+02/15/2023 03:28:45 PM - LoggerDemoConf - CRITICAL - critical message
