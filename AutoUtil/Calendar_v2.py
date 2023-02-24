@@ -1,10 +1,9 @@
 import time
 from datetime import date
 
-def transformare_luna():
-
-    today = date.today()
-    luna = today.strftime("%B")
+today = date.today()
+luna = today.strftime("%B")
+def transformare_luna(luna):
 
     if luna=="February":
          luna="Februarie"
@@ -41,7 +40,7 @@ def transformare_luna():
 
     return luna
 
-transformare_luna()
+transformare_luna(luna)
 
 
 

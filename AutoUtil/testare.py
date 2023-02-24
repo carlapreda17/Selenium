@@ -2,11 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 import time
-from datetime import date
+from datetime import date,timedelta
 
-baseUrl = "https://autoutil.thedemo.is/acasa/autovehicul/606/alerte/2/adauga"
-driver = webdriver.Chrome()
-driver.get(baseUrl)
-driver.maximize_window()
-driver.implicitly_wait(15)
-time.sleep(3)
+StartDate = "March 1, 2023"
+end_date = StartDate + timedelta(days=31)
+end_date=end_date.strftime("%B")
+print(end_date)
