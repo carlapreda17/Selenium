@@ -15,10 +15,10 @@ def transformare_luna(luna):
         luna="Aprilie"
 
     elif luna=="June":
-        luna=="Iunie"
+        luna="Iunie"
 
     elif luna=="July":
-        luna=="Iulie"
+        luna="Iulie"
 
     elif luna=="August":
          luna="August"
@@ -37,6 +37,8 @@ def transformare_luna(luna):
 
     elif luna=="January":
         luna="Ianuarie"
+    else:
+        return False
 
     return luna
 

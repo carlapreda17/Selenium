@@ -4,45 +4,12 @@ from selenium.webdriver.common.by import By
 import time
 from datetime import date,timedelta
 from AutoUtil.Calendar_v2 import transformare_luna
+from AutoUtil.inregistrare import inregistrare
 
 class Calendar():
 
     def test(self):
-        baseUrl = "https://autoutil.thedemo.is/"
-        driver = webdriver.Chrome()
-        driver.get(baseUrl)
-        driver.maximize_window()
-        driver.implicitly_wait(15)
-        time.sleep(3)
 
-        #login
-        intra_in_cont = driver.find_element(By.XPATH, "//div[@id='__next']//div[.='INTRĂ ÎN CONT']")
-        intra_in_cont.click()
-        time.sleep(1)
-
-        email = driver.find_element(By.XPATH, "//input[@type='text']")
-        email.send_keys("carla_preda@yahoo.com")
-
-        time.sleep(0.5)
-        parola = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/div[2]/input")
-        parola.send_keys("Testare123@")
-
-        intra_in_cont2 = driver.find_element(By.XPATH, "//div[@id='__next']//div[.='INTRĂ ÎN CONT']")
-        intra_in_cont2.click()
-        time.sleep(1)
-
-        # adauga masina
-        adauga = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[@role='button']")
-        adauga.click()
-        time.sleep(1)
-
-        nr_inmatriculare = driver.find_element(By.XPATH, "/html//div[@id='__next']//input")
-        nr_inmatriculare.send_keys("VN 06 HRK")
-        time.sleep(1)
-
-        adauga_masina = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='ADAUGĂ MAȘINĂ']")
-        adauga_masina.click()
-        time.sleep(1)
 
         ziua_1 = date.today() + timedelta(days=2)
         ziua_1_luna = ziua_1.strftime("%B")
@@ -291,7 +258,7 @@ class Calendar():
             time.sleep(1)
 
             treizeci_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='30 zile']")
-            treizeci_zile_zile.click()
+            treizeci_zile.click()
             time.sleep(0.2)
 
             sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
@@ -307,14 +274,20 @@ class Calendar():
             time.sleep(1)
 
         else:
-            while (luna_30 != luna_calendar):
+            if luna_30 != luna_calendar:
                 slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
                 luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
                 print(luna_calendar)
+                if luna_30 != luna_calendar:
+                    slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                    slider.click()
+                    luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
+                    luna_calendar = luna_curenta_calendar.split()[0]
+                    print(luna_calendar)
 
-            data_casco = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_30_ziua) + "']").__getitem__(3)
+            data_casco = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_30_ziua) + "']").__getitem__(-1)
             data_casco.click()
             time.sleep(1)
 
