@@ -38,40 +38,35 @@ class AutoUtil():
         itp.click()
         time.sleep(0.7)
 
-        luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                     "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-            5).get_attribute("innerHTML")
+        luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
         luna_calendar = luna_curenta_calendar.split()[0]
 
         if luna_1 == luna_calendar:
-            data_itp = driver.find_element(By.XPATH,
-                                           "/html//div[@id='choice-calendar']//div[.='" + str(ziua_1_ziua) + "']")
+            data_itp = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_1_ziua) + "']")
             data_itp.click()
             time.sleep(1)
 
-            o_zi = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='1 zi']")
+            o_zi = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='1 zi']")
             o_zi.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
-            ok = driver.find_element(By.XPATH,
-                                     "/html//div[@id='__next']/div/div[2]/div[2]//div[@role='dialog']//div[@role='button']")
+            ok = driver.find_element(By.XPATH,"/html//div[@id='__next']/div/div[2]/div[2]//div[@role='dialog']//div[@role='button']")
             ok.click()
             time.sleep(10)
 
-            confirmare = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='CONTINUĂ']")
+            confirmare = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='CONTINUĂ']")
             confirmare.click()
             time.sleep(1)
 
@@ -80,45 +75,37 @@ class AutoUtil():
 
         else:
             while (luna_1 != luna_calendar):
-                slider = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
-                luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                             "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                    5).get_attribute("innerHTML")
+                luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
 
-            slider = driver.find_element(By.XPATH,
-                                         "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+            slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
             time.sleep(2)
-            data_itp = driver.find_element(By.XPATH,
-                                           "/html//div[@id='choice-calendar']//div[@role='button']/div[.='" + str(
-                                               ziua_1_ziua) + "']")
+            data_itp = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='button']/div[.='" + str(ziua_1_ziua) + "']")
             data_itp.click()
             time.sleep(0.8)
-            ziua_1 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='1 zi']")
+            ziua_1 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='1 zi']")
             ziua_1.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
-            ok = driver.find_element(By.XPATH,
-                                     "/html//div[@id='__next']/div/div[2]/div[2]//div[@role='dialog']//div[@role='button']")
+            ok = driver.find_element(By.XPATH,"/html//div[@id='__next']/div/div[2]/div[2]//div[@role='dialog']//div[@role='button']")
             ok.click()
             time.sleep(10)
 
-            confirmare = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='CONTINUĂ']")
+            confirmare = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='CONTINUĂ']")
             confirmare.click()
             time.sleep(2)
 
@@ -127,7 +114,7 @@ class AutoUtil():
 
         # RCA
 
-        rca = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[5]/div/div[3]/div[.='adaugă alertă']")
+        rca = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[5]/div/div[3]/div[.='adaugă alertă']")
         rca.click()
         time.sleep(1)
 
@@ -138,68 +125,59 @@ class AutoUtil():
         if ziua_5_ziua[0] == '0':
             ziua_5_ziua = ziua_5_ziua[1]
 
-        luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                     "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-            5).get_attribute("innerHTML")
+        luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
         luna_calendar = luna_curenta_calendar.split()[0]
 
         if luna_5 == luna_calendar:
-            data_rca = driver.find_element(By.XPATH,
-                                           "/html//div[@id='choice-calendar']//div[.='" + str(ziua_5_ziua) + "']")
+            data_rca = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_5_ziua) + "']")
             data_rca.click()
             time.sleep(1)
 
-            cinci_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='5 zile']")
+            cinci_zile = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='5 zile']")
             cinci_zile.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
         else:
             while (luna_5 != luna_calendar):
-                slider = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
-                luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                             "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                    5).get_attribute("innerHTML")
+                luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
 
-            data_rca = driver.find_element(By.XPATH,
-                                           "/html//div[@id='choice-calendar']//div[.='" + str(ziua_5_ziua) + "']")
+            data_rca = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_5_ziua) + "']")
             data_rca.click()
             time.sleep(1)
 
-            cinci_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='5 zile']")
+            cinci_zile = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='5 zile']")
             cinci_zile.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
         # Rovinieta
-        rovinieta = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[7]/div/div[3]/div[.='adaugă alertă']")
+        rovinieta = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[7]/div/div[3]/div[.='adaugă alertă']")
         rovinieta.click()
         time.sleep(2)
 
@@ -210,45 +188,39 @@ class AutoUtil():
         if ziua_15_ziua[0] == '0':
             ziua_15_ziua = ziua_15_ziua[1]
 
-        luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                     "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
+        luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
             5).get_attribute("innerHTML")
         luna_calendar = luna_curenta_calendar.split()[0]
 
         if luna_15 == luna_calendar:
-            data_rovinieta = driver.find_element(By.XPATH, "/html//div[@id='choice-calendar']//div[.='" + str(
+            data_rovinieta = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(
                 ziua_15_ziua) + "']")
             data_rovinieta.click()
             time.sleep(1)
 
-            cincisprezece_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='15 zile']")
+            cincisprezece_zile = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='15 zile']")
             cincisprezece_zile.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
         else:
             while (luna_15 != luna_calendar):
-                slider = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
-                luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                             "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                    5).get_attribute("innerHTML")
+                luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
 
-            data_rovinieta = driver.find_element(By.XPATH, "/html//div[@id='choice-calendar']//div[.='" + str(
-                ziua_15_ziua) + "']")
+            data_rovinieta = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_15_ziua) + "']")
             data_rovinieta.click()
             time.sleep(1)
             cincisprezece_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='15 zile']")
@@ -262,16 +234,15 @@ class AutoUtil():
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
         # CASCO
-        casco = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[9]/div/div[3]/div[.='adaugă alertă']")
+        casco = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[9]/div/div[3]/div[.='adaugă alertă']")
         casco.click()
 
-        alerta = driver.find_element(By.XPATH, "/html//div[@id='__next']//select")
+        alerta = driver.find_element(By.XPATH,"/html//div[@id='__next']//select")
         alerta.click()
 
         textToSelect = "CASCO"
@@ -289,55 +260,44 @@ class AutoUtil():
         if ziua_30_ziua[0] == '0':
             ziua_30_ziua = ziua_30_ziua[1]
 
-        luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                     "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-            5).get_attribute("innerHTML")
+        luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
         luna_calendar = luna_curenta_calendar.split()[0]
 
         if luna_30 == luna_calendar:
-            data_casco = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[.='" + str(ziua_30_ziua) + "']")
+            data_casco = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_30_ziua) + "']")
             data_casco.click()
             time.sleep(1)
 
-            treizeci_zile = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='30 zile']")
+            treizeci_zile = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='30 zile']")
             treizeci_zile.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
         else:
             if luna_30 != luna_calendar:
-                slider = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
-                luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                             "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                    5).get_attribute("innerHTML")
+                luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
 
                 if luna_30 != luna_calendar:
-                    slider = driver.find_element(By.XPATH,
-                                                 "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                    slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                     slider.click()
-                    luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                                 "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                        5).get_attribute("innerHTML")
+                    luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                     luna_calendar = luna_curenta_calendar.split()[0]
 
-            data_casco = driver.find_elements(By.XPATH, "/html//div[@id='choice-calendar']//div[.='" + str(
-                ziua_30_ziua) + "']").__getitem__(-1)
+            data_casco = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_30_ziua) + "']").__getitem__(-1)
             data_casco.click()
             time.sleep(1)
 
@@ -353,8 +313,7 @@ class AutoUtil():
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
@@ -390,48 +349,39 @@ class AutoUtil():
         if ziua_1_ziua[0] == '0':
             ziua_1_ziua = ziua_1_ziua[1]
 
-        luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                     "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-            5).get_attribute("innerHTML")
+        luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
         luna_calendar = luna_curenta_calendar.split()[0]
 
         if luna_1 == luna_calendar:
-            data_pasaport = driver.find_element(By.XPATH,
-                                                "/html//div[@id='choice-calendar']//div[.='" + str(ziua_1_ziua) + "']")
+            data_pasaport = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[.='" + str(ziua_1_ziua) + "']")
             data_pasaport.click()
             time.sleep(1)
 
-            o_zi = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='1 zi']")
+            o_zi = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='1 zi']")
             o_zi.click()
             time.sleep(0.2)
 
-            sms = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
+            sms = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[1]/label/div[2]/div/div[2]/div")
             sms.click()
             time.sleep(0.2)
 
-            email2 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
+            email2 = driver.find_element(By.XPATH,"/html//div[@id='__next']//div[3]/label/div[2]/div/div[2]")
             email2.click()
             time.sleep(0.2)
 
-            adaugare_alerta = driver.find_elements(By.XPATH,
-                                                   "/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
+            adaugare_alerta = driver.find_elements(By.XPATH,"/html//div[@id='__next']//div[@role='button']").__getitem__(-1)
             adaugare_alerta.click()
             time.sleep(1)
 
 
         else:
             while (luna_1 != luna_calendar):
-                slider = driver.find_element(By.XPATH,
-                                             "/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
+                slider = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']/div[1]/div[3]")
                 slider.click()
-                luna_curenta_calendar = driver.find_elements(By.XPATH,
-                                                             "/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(
-                    5).get_attribute("innerHTML")
+                luna_curenta_calendar = driver.find_elements(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='slider']//div").__getitem__(5).get_attribute("innerHTML")
                 luna_calendar = luna_curenta_calendar.split()[0]
 
-            data_pasaport = driver.find_element(By.XPATH,
-                                                "/html//div[@id='choice-calendar']//div[@role='button']/div[.='" + str(
-                                                    ziua_1_ziua) + "']")
+            data_pasaport = driver.find_element(By.XPATH,"/html//div[@id='choice-calendar']//div[@role='button']/div[.='" + str(ziua_1_ziua) + "']")
             data_pasaport.click()
             time.sleep(3)
             ziua_1 = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='1 zi']")
