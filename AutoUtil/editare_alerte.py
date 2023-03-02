@@ -22,7 +22,8 @@ class Editare():
 
 
         #modifica alerte
-        driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='Modifică Alerte']").click()
+        modifica=driver.find_element(By.XPATH,"/html//div[@id='__next']//div[.='Modifică Alerte']")
+        modifica.click()
         time.sleep(1)
 
 
