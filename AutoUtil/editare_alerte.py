@@ -101,10 +101,11 @@ class Editare():
 
         #RCA
 
-        buton_modifica = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='Modifică Alerte']").click()
+        buton_modifica = driver.find_element(By.XPATH, "/html//div[@id='__next']//div[.='Modifică Alerte']")
+        buton_modifica.click()
         time.sleep(1)
 
-        renoieste_rca = driver.find_elements(By.XPATH, "/html//div[@id='__next']//img").__getitem__(7).click()
+        renoieste_rca = driver.find_elements(By.XPATH, "/html//div[@id='__next']//img").__getitem__(8).click()
         time.sleep(1)
 
         ziua_5 = date.today() + timedelta(days=10)
