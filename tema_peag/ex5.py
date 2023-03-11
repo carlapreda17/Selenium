@@ -10,5 +10,7 @@ def cmmdc(a,b):
 
     print(b)
 
-cmmdc(5,25)
 
+
+if __name__=='__main__':
+    cmmdc(5, 25)
